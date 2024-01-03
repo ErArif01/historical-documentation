@@ -13,8 +13,8 @@ jobs:
       - name: Trigger Workflow in Another Repository
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: Breadcrumbshistorical-documentation
+          token: ${{ secrets.CROSS_REPO_PAT }}
+          repository: <username>/<repository-name>
           event-type: trigger-cross-repo-workflow
           client-payload: '{"key": "value"}'
 
@@ -30,3 +30,6 @@ jobs:
       - name: Run Cross-Repository Workflow
         run: |
           echo "Running Cross-Repository Workflow"
+          # Add your specific commands or scripts here
+
+# Add additional jobs or steps as needed
